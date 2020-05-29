@@ -13,7 +13,7 @@ class PracticeController extends Controller
         $path = storage_path() . "/json/data.json";
 
         $json = json_decode(file_get_contents($path), true);
-
+        //dd($json);
         return view('practice', ['data' => $this->generateId($json)]);
     }
 

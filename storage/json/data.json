@@ -6760,28 +6760,6 @@
         "type": "single"
     },
     {
-        "question": "You have injected \\Magento\\Framework\\Api\\SearchCriteria into the constructor method. You then wrote the following code in a method:\n1: $search = $this->searchCriteria->setSortOrders([‘entity_id ASC’]);\n2: $this->productRepository>getList($search);\n\nWhen running this code, you get an error: Fatal error: Uncaught TypeError: Argument 1 must be an instance of SortOrder, string given. What are two errors present in the examples given? (choose 2)",
-        "answers": [
-            {
-                "answer": "Sort orders must be added one at a time with the addSortOrder method.",
-                "isCorrect": false
-            },
-            {
-                "answer": "One line 2, when loading $search, you need to use $search->getCriteria().",
-                "isCorrect": false
-            },
-            {
-                "answer": "SearchCriteriaBuilder should be used instead of SearchCriteria.",
-                "isCorrect": true
-            },
-            {
-                "answer": "Sort order should not be specified as a string.",
-                "isCorrect": true
-            }
-        ],
-        "type": "single"
-    },
-    {
         "question": "For fraud prevention purposes, you need to notate the IP address from which a user adds an item to their cart. Which event will allow you access to every cart addition?",
         "answers": [
             {
@@ -7170,6 +7148,970 @@
         "type": "single"
     },
     {
+        "question": "When modifying a layout, we can use\n- move\n- before and after\nWhat is the different between the 2 method",
+        "answers": [
+            {
+                "answer": "move can change the element parent",
+                "isCorrect": true
+            },
+            {
+                "answer": "move cannot be used with container",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Where is the admin frontname configured",
+        "answers": [
+            {
+                "answer": "app/etc/env.php",
+                "isCorrect": true
+            },
+            {
+                "answer": "app/etc/di.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "composer.json",
+                "isCorrect": false
+            },
+            {
+                "answer": "app/etc/config.php",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You want to add new REST api endpoint, which file do you need to change",
+        "answers": [
+            {
+                "answer": "etc/webapi.xml",
+                "isCorrect": true
+            },
+            {
+                "answer": "etc/rest.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "All interfaces under Api/ are automatically created an endpoint",
+                "isCorrect": false
+            },
+            {
+                "answer": "etc/webapi_rest/di.xml",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "How to add a new column to a table specified in module MyCompany/MyModule",
+        "answers": [
+            {
+                "answer": "Create db_schema.xml on your module to add the column",
+                "isCorrect": true
+            },
+            {
+                "answer": "Change db_schema.xml directly from module MyCompany/MyModule",
+                "isCorrect": false
+            },
+            {
+                "answer": "Create SchemaPatch to add the column",
+                "isCorrect": false
+            },
+            {
+                "answer": "bin/magento setup:db-schema:upgrade <table> <column_info>",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "The merchant will sell at 2 different countries, each with different payment methods. Which setup should you build?",
+        "answers": [
+            {
+                "answer": "B. 2 websites 2 store views",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. 1 website 2 store views",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. 1 website 1 store view",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. 1 website 2 languages",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "A customer quote has only 1 downloadable product. Which of the below is true",
+        "answers": [
+            {
+                "answer": "A. There is no shipping address",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. There is no billing address",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. There is no address",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Shipping address is replaced by a download url",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "How do you force Magento to re-run a Data Patch?",
+        "answers": [
+            {
+                "answer": "C. Delete a record in database table patch_list with the patch_name the same as the class of the Data Patch",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. bin/magento setup:db-data:upgrade",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. remove the patch, the run bin/magento setup:db-data:upgrade, then add the patch back and run bin/magento setup:db-data:upgrade again",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "How do you persist entity with repository?",
+        "answers": [
+            {
+                "answer": "A. save()",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. persist()",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. update()",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "\"How does dependency works in this case\npublic function __construct(\n    ...\n    \\Magento\\Store\\Model\\StoreManagerInterface $storeManager,\n    ...\n)\"",
+        "answers": [
+            {
+                "answer": "A. The system find the preference for StoreManagerInterface in di.xml and inject it",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. The system find all the classes that implement the StoreManagerInterface, then sort by name and get the first one",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. If $storeManager is not given, the system will create a shell based on the StoreManagerInterface",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You have created a new entity vendor with model, resource model and collection. How do you get this entity to fire events such as vendor_before_save or vendor_after_save?",
+        "answers": [
+            {
+                "answer": "C. Set the variable $_eventPrefix = \"vendor\"",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. Register in di.xml with argument _eventPrefix=\"vendor\"",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. Write code to fire the events when they're needed",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "A routes.xml file has this\n<route id=\"mymodule\" frontName=\"subscribe\">\n    <module name=\"MyCompany_MyModule\" />\n</route>\nWhat is the layout handle for the controller Controller/Test?",
+        "answers": [
+            {
+                "answer": "A. mymodule_test_index",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. mymodule_test_<action_name>",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. subscribe_test_index",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. subscribe_test_<action_name>",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "What is the main purposes of the Resource Model? Choose 2",
+        "answers": [
+            {
+                "answer": "To create, retrieve, update and delete entity data from database",
+                "isCorrect": true
+            },
+            {
+                "answer": "To list all entity models",
+                "isCorrect": false
+            },
+            {
+                "answer": "To map entity with one or multiple rows in database",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You have created a new acl.xml file to restrict to certain role, but it doesn't work. Where do you look to find if it has been processed?",
+        "answers": [
+            {
+                "answer": "B. Open a role in admin Role Management and check the resource dropdown",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. bin/magento admin:resource:list -all",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. Create a plugin to class ... to list all loaded acl",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "\"You've created a new page in admin at url .... What needs to be done for the url to work?\nChoose 2\"",
+        "answers": [
+            {
+                "answer": "C. etc/addminhtml/menu.xml",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. etc/adminhtml/router.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. etc/adminhtml/di.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. etc/adminhtml/routes.xml",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "\"When adding a new class to __construct()\npublic function __construct(\n    ...\n    \\Magento\\Store\\Model\\StoreManagerInterface $storeManager,\n    ...\n)\nthere is an error ....\nWhat do you need to do to fix this\"",
+        "answers": [
+            {
+                "answer": "C. Delete generated/",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. Clear cache",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. Deploy static content",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Cannot add a class this way",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "\"The code\n$productRepository->getList($criteriaBuilder->addFilter('...', '...'));\nthrows an error \n\\Magento\\Framework\\Api\\SearchCriteriaInterface is expected, \\Magento\\Framework\\Api\\SearchCriteriaBuilder is given\nHow do you fix this\"",
+        "answers": [
+            {
+                "answer": "C. Change the code to\n$productRepository->getList($criteriaBuilder->addFilter('...', '...')->create())",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. Add a preference for SearchCriteriaInterface as SearchCriteriaBuilder in di.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. Delete generated/ to get a new version of SearchCriteriaBuilder",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "How to create a block with template view.phtml",
+        "answers": [
+            {
+                "answer": "A. <block class=\"Magento\\Framework\\View\\Element\\Template\" name=\"myBlock\" template=\"MyCompany_MyModule::view.phtml\" />",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. <block class=\"Magento\\Framework\\View\\Element\\Template\" name=\"myBlock\" template=\"view.phtml\" scope=\"MyCompany_MyModule\" />",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. <block class=\"Magento\\Framework\\View\\Element\\Template\" name=\"myBlock\" template=\"view.phtml\" module=\"MyCompany_MyModule\" />",
+                "isCorrect": false
+            },
+            {
+                "answer": "\"D.\n<block class=\"\"Magento\\Framework\\View\\Element\\Template\"\" name=\"\"myBlock\"\" template=\"\"view.phtml\"\">\n\t<arguments>\n\t\t<argument name=\"\"module\"\">MyCompany_MyModule</argument>\n\t</arguments>\n</block>\"",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "How to add a new block as a child to the block \"parent.block\"",
+        "answers": [
+            {
+                "answer": "\"D.\n<referenceBlock name=\"\"parent.block\"\">\n    <block class=\"\"Magento\\Framework\\View\\Element\\Template\"\" name=\"\"myBlock\"\" />\n</referenceBlock>\"",
+                "isCorrect": true
+            },
+            {
+                "answer": "\"A.\n<referenceContainer name=\"\"parent.block\"\">\n    <block class=\"\"Magento\\Framework\\View\\Element\\Template\"\" name=\"\"myBlock\"\" />\n</referenceContainer>\"",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. <block class=\"Magento\\Framework\\View\\Element\\Template\" name=\"myBlock\" parent=\"parent.block\" />",
+                "isCorrect": false
+            },
+            {
+                "answer": "\"C.\n<block class=\"\"Magento\\Framework\\View\\Element\\Template\"\" name=\"\"myBlock\"\">\n        <arguments>\n                <argument name=\"\"parent\"\">parent.block</argument>\n        </arguments>\n</block>\"",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "How to remove a column from a table declared in another module",
+        "answers": [
+            {
+                "answer": "Create db_schema.xml to specify the column with disabled=\"true\"",
+                "isCorrect": true
+            },
+            {
+                "answer": "Remove the column directly from that module db_schema.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "Copy the db_schema.xml file to your module and remove the column there",
+                "isCorrect": false
+            },
+            {
+                "answer": "Create SchemaPatch to remove the column",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "In a theme, what does the view.xml does",
+        "answers": [
+            {
+                "answer": "To store theme's variables and configurations",
+                "isCorrect": true
+            },
+            {
+                "answer": "To store the theme's CSS data",
+                "isCorrect": false
+            },
+            {
+                "answer": "To store Grunt config",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Need to create an observer MyObserver class, which of the below is correct",
+        "answers": [
+            {
+                "answer": "class MyObserver implements Event\\ObserverInterface {\n    public function execute($observer);\n}",
+                "isCorrect": true
+            },
+            {
+                "answer": "class MyObserver implements Event\\ObserverInterface {\n    public function MyObserver($observer);\n}",
+                "isCorrect": false
+            },
+            {
+                "answer": "class MyObserver extends Event\\ObserverAbstract {\n    public function execute($observer);\n}",
+                "isCorrect": false
+            },
+            {
+                "answer": "class MyObserver {\n    public function MyObserver($observer);\n}",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Website has a million SKUs, the client wants to have dynamic color theme and page layout on product page based on price. What to do",
+        "answers": [
+            {
+                "answer": "Use a block that choose a template dynamically based on price",
+                "isCorrect": true
+            },
+            {
+                "answer": "Turn on dynamic product ui component to change based on price",
+                "isCorrect": false
+            },
+            {
+                "answer": "Create a patch data to update the layout and color for each product",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "A configurable product has 7 sizes and 4 colors, what is the minimum amount of simple product needed for the product to be salable",
+        "answers": [
+            {
+                "answer": "Only 1 combination of any size and color",
+                "isCorrect": true
+            },
+            {
+                "answer": "Minimum of 7, one combination for each possible sizes and colors",
+                "isCorrect": false
+            },
+            {
+                "answer": "No need for any combination, the color and size will be set at checkout",
+                "isCorrect": false
+            },
+            {
+                "answer": "All possible combination of the sizes and colors",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You have just made some changes of the REST api, and need to clear the cache config_webservice. Keeping site performance in mind, what will you do?",
+        "answers": [
+            {
+                "answer": "cache:clean config_webservice",
+                "isCorrect": true
+            },
+            {
+                "answer": "cache:refresh config_webservice",
+                "isCorrect": false
+            },
+            {
+                "answer": "cache:flush",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Which two tasks are supported by Magento CLI? (Choose two.)",
+        "answers": [
+            {
+                "answer": "A. Administrator account creation",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. Clearing cache",
+                "isCorrect": true
+            },
+            {
+                "answer": "C. Codebase deployment from developer machine to staging server",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Customer password reset",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You are implementing a custom module MyModule, which provides an implementation of\n\\Psr\\Log\\LoggerInterface called \\MyCompany\\MyModule\\Logger.\nThe LoggerInterface has the default preference declared in app/etc/di.xml.\nKeeping upgradability in mind, how do you make \\MyCompany\\MyModule\\Logger the\ndefault implementation of the LoggerInterface globally?",
+        "answers": [
+            {
+                "answer": "A. Declare a new preference for the LoggerInterface in\napp/code/myCompany/MyModule/etc/frontend/di.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. Declare a new preference for the LoggerInterface in MyCompany/MyModule/etc/di.xml",
+                "isCorrect": true
+            },
+            {
+                "answer": "C. Overwrite the existing preference for the LoggerInterface in app/etc/di.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Declare a new preference for the LoggerInterface in\napp/code/MyCompany/MyModule/etc/global/di.xml",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "The constructor function for \\Magento\\Catalog\\Model\\Category contains this excerpt:\t\nWith the automatic dependency injection that Magento provides, how is the\t\nStoreManagerInterface resolved?\t",
+        "answers": [
+            {
+                "answer": "B. Magento finds all classes that implement \\Magento\\Store\\Model\\StoreManagerInterface\n(ordered alphabetically) and injects the first class.",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. Magento looks to the di.xml files in the entire system for a preference node for\n\\Magento\\Store\\Model\\StoreManagerInterface. This class is constructed and injected",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. If no $storeManager is provided, Magento’s code generator creates a shell concrete\nclass based on \\Magento\\Store\\Model\\StoreManagerInterface",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Magento throws an exception because you cannot instantiate an interface",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "During a code review of a module MyCompany_PaymentCurrencies you see a configuration field\t\t\t\t\t\ndeclared in the file etc/adminhtml/system.xml:\t\t\t\t\t\n\t\t\t\t\t\nWhat is the consequence of the attribute showInStore being set to 0?\t\t\t\t\t",
+        "answers": [
+            {
+                "answer": "B. The input field will not be visible if a store view scope is selected in the system configuration",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. The field value will not be accessible on the store front by calling ScopeConfigInterface::getValue() with a $scopeType argument of ‘store’.",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. The input field will only be visible if a website’s default store scope is selected in the system\nconfiguration",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. The input field will be disabled if a store view scope is selected in the system configuration",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You are adding a child node to the product.info block using the XML: How will this block be rendered?",
+        "answers": [
+            {
+                "answer": "A. Child block nodes are automatically rendered as HTML",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. By calling $block->getChildHtml(‘mynewblock’) in the parent block’s template",
+                "isCorrect": true
+            },
+            {
+                "answer": "C. The layout is invalid since block elements cannot be nested",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Automatically if the block class Custom implements the _toHtml method",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "What is the relationship between products and categories in Magento?",
+        "answers": [
+            {
+                "answer": "B. Product to category relation is dynamically defined by Catalog Product Rules",
+                "isCorrect": false
+            },
+            {
+                "answer": "A. Products may be assigned to zero or more categories",
+                "isCorrect": true
+            },
+            {
+                "answer": "C. Each product belongs to zero or one category",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Each product always belongs to one category",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "A third-party module uses a layout update that changes the template path for a core block from\t\t\nproduct/view/addto/compare.phtml of the Magento_Catalog module to\t\t\ncustom/view/addto/compare.phtml of your custom module. The merchant has a customized version of\t\t\nthis template in their custom theme.\t\t\nWhat is a consequence of this setup?\t\t",
+        "answers": [
+            {
+                "answer": "A. If the custom module is removed, the custom template will no longer apply",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. This setup will throw an IllegalStateException",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. If a preference for the core block is set, the template will no longer apply",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. If another module is installed which also customizes the same core template, the templates will be\t\nrendered sequentially\t",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You need to add a new text attribute to all products in the Magento store. When this attribute is\t\t\t\t\ndisplayed on the product page, its values must be different depending on the selected language.\t\t\t\t\nKeeping simplicity in mind, how do you add this attribute?\t\t\t\t",
+        "answers": [
+            {
+                "answer": "A. Use the Magento CLI to create a new custom attribute, then generate dictionaries for all supported languages",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. Use a Data Patch to create a new EAV attribute",
+                "isCorrect": true
+            },
+            {
+                "answer": "C. Add a new column to the catalog_product_entity table using declarative schema",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Use the admin panel to create a new extension attribute",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You are developing a module and need to add another column to a table introduced by another module\t\nMyCompany_MyModule via db schema.\t\nHow do you do that?\t",
+        "answers": [
+            {
+                "answer": "A. Create a etc/db_schema.xml file in your module, add the column and run bin/magento setup:upgrade",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. Create a etc/db.xml file in your module, add the column and run bin/magento setup:db-\t\nschema:upgrade\t",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. Run a command: bin/magento setup:db-schema:upgrade <table> <column definition>",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Create a etc/db_schema_whitelist.json file in your module, add the column and run bin/magento",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You have to install a new module on the production environment. All the module is adding a new\t\t\t\t\t\t\t\nproduct attribute. You enabled maintenance mode, copied the module code, run bin/magento\t\t\t\t\t\t\t\nsetup:upgrade and disabled maintenance mode.\t\t\t\t\t\t\t\nWhat two risks does this process pose? (Choose two.)\t\t\t\t\t\t\t",
+        "answers": [
+            {
+                "answer": "A. It will clean all caches which will cause a performance degradation",
+                "isCorrect": true
+            },
+            {
+                "answer": "D. It will clean static assets from the pub/static folder",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. The new attribute will be invisible on the storefront until the cache is cleaned manually",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. It will void all active sessions",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "While reviewing a layout file named sales_order_view.xml you notice the element\t\t\t\t\t\t\n<update handle=”customer_account”/>\t\t\t\t\t\t\nWhat is the purpose of this element?\t\t\t\t\t\t",
+        "answers": [
+            {
+                "answer": "C. Adds the customer_account handle to the page’s handles list",
+                "isCorrect": true
+            },
+            {
+                "answer": "D. Updates the current page handle to customer_account",
+                "isCorrect": false
+            },
+            {
+                "answer": "A. Replaces the customer_account handle with sales_order_view",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. Nothing, this element has been deprecated",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You are building a report using complex SQL aggregations to locate the required data.In what type of class do you put these SQL statements?",
+        "answers": [
+            {
+                "answer": "D. Resource model",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. Repository",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. Helper",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. Model",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You are creating a new page layout for your custom module. What is the primary difference between container and block elements?",
+        "answers": [
+            {
+                "answer": "A. A container's children are rendered automatically",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. A block's position within the layout can be altered",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. Only containers can be removed by name or alias",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. They extend different abstract classes",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "NO.9 You are setting up a brand new Magento installation for a merchant who is migrating from\t\t\t\t\t\t\t\nMagento 1 to Magento 2.\t\t\t\t\t\t\t\nKeeping in mind upgradability and the need to customize, which one do you choose?\t\t\t\t\t\t\t",
+        "answers": [
+            {
+                "answer": "C. Create a new Magento instance using composer create-project",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. Clone the magento/magento2 GitHub repository",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. Create a new Magento instance by using the bin/magento install command",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Run php bin/magento setup:migrate <path-to-m1-installation> <new-version> command",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "NO.8 You are implementing a before plugin in MyCompany_Magic. It will intercept the same method\t\t\t\t\t\t\t\nthat MyCompany_Admission is already intercepting using a before plugin: Topmenu::getBlockHtml\t\t\t\t\t\t\t\nWhich two actions are required to ensure the new plugin will execute last? (Choose two.)\t\t\t\t\t\t\t",
+        "answers": [
+            {
+                "answer": "B. Set a sortOrder=\"10\" for MyCompany_Admission's plugin in MyCompany_Magic's etc/di.xml",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. Configure plugin sequencing for both plugins in MyCompany_Magic's etc/plugin_sequence.xml file",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. Include a sortOrder=\"20\" on the new plugin in MyCompany_Magic's etc/di.xml file",
+                "isCorrect": true
+            },
+            {
+                "answer": "D. Add MyCompany_Admission as a dependency in MyCompany_Magic's etc/module.xml file",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "NO.7 You have loaded an instance of Magento\\Catalog\\Model\\Product in the $product variable. You know that the loaded product has the type configurable with four variations. These variations have the prices: $10, $12, $12, $15. What will be the result of the $product->getFinalPrice() call?",
+        "answers": [
+            {
+                "answer": "D. 10",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. [10, 12, 12, 15]",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. 15",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. [10, 12, 15]",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "How do you add a foreign key to an existing table created by another module?",
+        "answers": [
+            {
+                "answer": "D. Create etc/db_schema.xml file with the table node and constraint child node",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. Run the command bin/magento setup:db-schema:upgrade <table> <constraint declaration>",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. Create the etc/db_constraints.xml file and specify foreign key there in the constraint node",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. This can only be done with raw SQL in a Schema Patch file",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "The module MyCompany_MyModule will add a new page in the admin interface to display\na custom entity in a grid.\nYou created a controller for this grid\n\\MyCompany\\MyModule\\Controller\\Adminhtml\\CustomEntity\\Index\nWhich two actions are required to make the new page accessible at the\nhttps://your.store.base.url/admin/my_module/custom_entity URL? (Choose two.)",
+        "answers": [
+            {
+                "answer": "B. Create a new menu item in MyCompany/MyModule/etc/adminhtml/menu.xml",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. Register my_module route for the AdminRouter in\nMyCompany/MyModule/etc/adminhtml/di.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. Specify the my_module/custom_entity URL using a @route annotation in the action\ncontroller execute() method",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. Register my_module route in MyCompany/MyModule/etc/adminhtml/routes.xml",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "In a custom module you are adding a new field to the store configuration. The field will set\nthe value for the configuration path mycompany/mymodule/myoption.\nHow do you supply the default value for that configuration option?",
+        "answers": [
+            {
+                "answer": "A. In the config/default/mycompany/mymodule/myoption node in the etc/config.xml file",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. In the system/mycompany/group/mymodule/field/myoption node in the etc/system.xml\nfile",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. In the menu/default/section/group/field node in the file etc/adminhtml/menu.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. In the system/section/group/field/value node in the etc/adminhtml/system.xml file",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "A module you are developing requires the addition of new routes that should be accessible in the store front.Where do you define your module's frontName?",
+        "answers": [
+            {
+                "answer": "A. etc/frontend/routes.xml",
+                "isCorrect": true
+            },
+            {
+                "answer": "B. etc/routes.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. etc/config.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. etc/frontend/config.xml",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "The client wants to upload a csv file to import new entity data in store configuration. Which is needed",
+        "answers": [
+            {
+                "answer": "<backend_model>....</backend_model>",
+                "isCorrect": true
+            },
+            {
+                "answer": "<frontend_model>....</frontend_model>",
+                "isCorrect": false
+            },
+            {
+                "answer": "<upload_model>....</upload_model>",
+                "isCorrect": false
+            },
+            {
+                "answer": "<source_model>....</source_model>",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Add a new Yes/No field in admin configuration with system.xml. Which of the ones below is needed",
+        "answers": [
+            {
+                "answer": "<source_model>Magento\\Config\\Model\\Config\\Source\\Yesno</source_model>",
+                "isCorrect": true
+            },
+            {
+                "answer": "<model>Magento\\Config\\Model\\Config\\Yesno</model>",
+                "isCorrect": false
+            },
+            {
+                "answer": "<frontend_model>Magento\\Config\\Model\\Config\\Frontend\\Yesno</frontend_model>",
+                "isCorrect": false
+            },
+            {
+                "answer": "<backend_model>Magento\\Config\\Model\\Config\\Backend\\Yesno</backend_model>",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
         "question": "\"<add\n        id=\"\"Magento_Catalog::catalog_categories\"\"\n        title=\"\"Categories\"\" translate=\"\"title\"\" \n        module=\"\"Magento_Catalog\"\" \n        sortOrder=\"\"20\"\" \n        parent=\"\"Magento_Catalog::inventory\"\" \n        action=\"\"catalog/category/\"\" \n        resource=\"\"Magento_Catalog::categories\"\"\n/>\" Need to add new admin menu item to Catalog menu, showing after the Categories. Choose 2",
         "answers": [
             {
@@ -7208,6 +8150,334 @@
             },
             {
                 "answer": "Only containers can be removed by name or alias",
+                "isCorrect": false
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Which two ways does Magento persist category relationships in the database? (Choose two.)",
+        "answers": [
+            {
+                "answer": "A, Using slash-separated values in the path field",
+                "isCorrect": true
+            },
+            {
+                "answer": "B, in the table catalog_category_index",
+                "isCorrect": false
+            },
+            {
+                "answer": "D, Using comma-separated values in the parent-ids field",
+                "isCorrect": false
+            },
+            {
+                "answer": "C, in the parent_id field",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "What happens when a category’s is_anchor attribute is set to 1?",
+        "answers": [
+            {
+                "answer": "C, This is the default category for a website",
+                "isCorrect": false
+            },
+            {
+                "answer": "A, Products without a specified category will be associated with this category",
+                "isCorrect": false
+            },
+            {
+                "answer": "D, The category will always be visible in the menu",
+                "isCorrect": false
+            },
+            {
+                "answer": "B, The customer will see all products from all children of the category",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "where store the customer email?",
+        "answers": [
+            {
+                "answer": "A. customer_entity_varchar",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. customer_entity",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. customer_entity_email",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Webite require price of product is different from each store, what is scope of price?",
+        "answers": [
+            {
+                "answer": "Website, Global",
+                "isCorrect": false
+            },
+            {
+                "answer": "Store",
+                "isCorrect": false
+            },
+            {
+                "answer": "Impossible",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Which one is true about shipping address?",
+        "answers": [
+            {
+                "answer": "One shipping address per line item product",
+                "isCorrect": false
+            },
+            {
+                "answer": "One shipping address per product type",
+                "isCorrect": false
+            },
+            {
+                "answer": "One shipping address per product quantity",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "A customer wants to add an extra block to product detailed page after SKU",
+        "answers": [
+            {
+                "answer": "Add block to catalog_product_view.xml",
+                "isCorrect": false
+            },
+            {
+                "answer": "Override in theme product/view/form.phtml",
+                "isCorrect": false
+            },
+            {
+                "answer": "You cannot create any new blocks in PDP use plugin",
+                "isCorrect": false
+            },
+            {
+                "answer": "Add custom layout container to catalog_product_view.xml after sku block",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Suppose in your module have file test.js in folder My_Module/view/frontend/web/js/test.js, your site config locale en_EN. Which one is exactly file generated?",
+        "answers": [
+            {
+                "answer": "base_url/static/version/frontend/default/en_EN/My_Module/web/test.js",
+                "isCorrect": false
+            },
+            {
+                "answer": "base_url/static/version/frontend/default/en_EN/My_Module/web/js/test.js",
+                "isCorrect": false
+            },
+            {
+                "answer": "base_url/static/version/frontend/default/en_EN/My_Module/test.js",
+                "isCorrect": false
+            },
+            {
+                "answer": "base_url/static/version/frontend/default/en_EN/My_Module/js/test.js",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You need to create each product and save it, what is need to inject in constructor?",
+        "answers": [
+            {
+                "answer": "Magento\\Catalog\\Model\\ProductBuilder",
+                "isCorrect": false
+            },
+            {
+                "answer": "Magento\\Catalog\\Api\\Data\\ProductInterfaceFactory",
+                "isCorrect": false
+            },
+            {
+                "answer": "Magento\\Catalog\\Api\\Data\\ProductInterface",
+                "isCorrect": false
+            },
+            {
+                "answer": "Magento\\Catalog\\Model\\Product",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "What order operation is use in my account in FO?",
+        "answers": [
+            {
+                "answer": "Invoice",
+                "isCorrect": false
+            },
+            {
+                "answer": "Edit order",
+                "isCorrect": false
+            },
+            {
+                "answer": "Refund",
+                "isCorrect": false
+            },
+            {
+                "answer": "Reorder",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You create a lastest order section in customer account, how do you to use the order repository in this template?",
+        "answers": [
+            {
+                "answer": "Use object manager to initial order repository in template",
+                "isCorrect": false
+            },
+            {
+                "answer": "Create viewModel and pass param to constructor through type argument",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "How to load product by id? (choose 2)",
+        "answers": [
+            {
+                "answer": "Magento\\Catalog\\Model\\Product::fetchById($id)",
+                "isCorrect": false
+            },
+            {
+                "answer": "Magento\\Catalog\\Model\\ProductRepository->getById($id)",
+                "isCorrect": true
+            },
+            {
+                "answer": "Model\\ResourceModel\\Product::load($productModel, $id)",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Website sell the jewelry, has many rings, each customer require each size. What is type of product suitable?",
+        "answers": [
+            {
+                "answer": "A. Bundle",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. Simple with option",
+                "isCorrect": false
+            },
+            {
+                "answer": "B. Configurable",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "Your module adds a new controller class which will return a JSON response.\nWhat will be the return type of the execute method?",
+        "answers": [
+            {
+                "answer": "A, You should implement a new API endpoint instead of returning JSON from a\ncontroller",
+                "isCorrect": false
+            },
+            {
+                "answer": "B, The string value of \\Zend_Json::encode()",
+                "isCorrect": false
+            },
+            {
+                "answer": "D, No return needed, an object that can be converted to JSON must be set as the\nResponse body",
+                "isCorrect": false
+            },
+            {
+                "answer": "C, An instance of \\Magento\\Framework\\Controller\\Result\\Json",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You added a new constructor argument to an existing action controller class.\nWhen you reload the page you get a PHP error that the wrong argument is passed to the class.\nHow do you fix this?",
+        "answers": [
+            {
+                "answer": "A, Clean the page cache",
+                "isCorrect": false
+            },
+            {
+                "answer": "B, Deploy static content",
+                "isCorrect": false
+            },
+            {
+                "answer": "D, Clean the config cache",
+                "isCorrect": false
+            },
+            {
+                "answer": "C, Clean the <magento_root>/generated/ folder",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "You have created a module with a custom ACL resource and want to restrict access to resources of\nyour module.\nWhich three items are restricted based on ACL role permissions? (Choose three.)",
+        "answers": [
+            {
+                "answer": "A, CLI Commands",
+                "isCorrect": false
+            },
+            {
+                "answer": "C, Storefront login",
+                "isCorrect": false
+            },
+            {
+                "answer": "D, System configuration sections",
+                "isCorrect": true
+            },
+            {
+                "answer": "E, Adminhtml controllers",
+                "isCorrect": true
+            },
+            {
+                "answer": "B, Webapi resources",
+                "isCorrect": true
+            }
+        ],
+        "type": "single"
+    },
+    {
+        "question": "A merchant tasks you to keep sales managers out of the system configuration backend\npages.\nHow do you do that using the admin interface?",
+        "answers": [
+            {
+                "answer": "B. You create a role with limited permissions and assign all sales manager users to the\nnew role",
+                "isCorrect": true
+            },
+            {
+                "answer": "A. You remove access to the restricted pages from each user’s ACL settings",
+                "isCorrect": false
+            },
+            {
+                "answer": "C. This is not possible in a native Magento instance and requires customization",
+                "isCorrect": false
+            },
+            {
+                "answer": "D. You create a role with access to the system configuration pages and assign it to all\nusers except the sales managers",
                 "isCorrect": false
             }
         ],
