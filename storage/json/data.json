@@ -7405,7 +7405,7 @@
         "question": "\"You've created a new page in admin at url .... What needs to be done for the url to work?\nChoose 2\"",
         "answers": [
             {
-                "answer": "C. etc/addminhtml/menu.xml",
+                "answer": "C. etc/adminhtml/menu.xml",
                 "isCorrect": true
             },
             {
@@ -8134,28 +8134,6 @@
         "type": "single"
     },
     {
-        "question": "You are creating a new page layout for your custom module. What is the primary difference between container and block elements?",
-        "answers": [
-            {
-                "answer": "A container’s children are rendered automatically",
-                "isCorrect": true
-            },
-            {
-                "answer": "A block’s position within the layout can be altered",
-                "isCorrect": false
-            },
-            {
-                "answer": "They extend different abstract classes",
-                "isCorrect": false
-            },
-            {
-                "answer": "Only containers can be removed by name or alias",
-                "isCorrect": false
-            }
-        ],
-        "type": "single"
-    },
-    {
         "question": "Which two ways does Magento persist category relationships in the database? (Choose two.)",
         "answers": [
             {
@@ -8208,17 +8186,17 @@
             },
             {
                 "answer": "C. customer_entity",
-                "isCorrect": false
+                "isCorrect": true
             },
             {
                 "answer": "B. customer_entity_email",
-                "isCorrect": true
+                "isCorrect": false
             }
         ],
         "type": "single"
     },
     {
-        "question": "Webite require price of product is different from each store, what is scope of price?",
+        "question": "Website require price of product is different from each store, what is scope of price?",
         "answers": [
             {
                 "answer": "Website, Global",

@@ -145,7 +145,7 @@
             @endforeach
         </div>
         <div class="title">
-            @for ($i = 1; $i <= 389; $i++)
+            @for ($i = 1; $i <= 388; $i++)
                 @php
                     $class = '';
                     if ($i == 1) {
